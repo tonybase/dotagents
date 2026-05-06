@@ -1,4 +1,6 @@
 # project files
+.DS_Store
+.skill-lock.json
 .cache/
 .agents/
 
@@ -10,4 +12,3 @@
 .vscode/
 .gopath/
 .gocache/
-.DS_Store
