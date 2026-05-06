@@ -1,0 +1,10 @@
+# env file
+.env
+.cache/
+
+# Editor/IDE
+.idea/
+.vscode/
+.gopath/
+.gocache/
+.DS_Store
