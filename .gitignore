@@ -1,6 +1,5 @@
 # project files
 .DS_Store
-.skill-lock.json
 .cache/
 .agents/
 
