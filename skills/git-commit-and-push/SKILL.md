@@ -1,18 +1,17 @@
 ---
 name: commit-and-push
-description: Creates conventional git commits using git-agent and pushes to the remote repository. This skill should be used when the user asks to "commit and push", "push my changes", or wants to commit and immediately push to remote. When invoking, pass the calling Claude model name as argument (e.g., "Claude Opus 4.6").
+description: Creates conventional git commits using standard git commands and pushes to the remote repository. This skill should be used when the user asks to "commit and push", "push my changes", or wants to commit and immediately push to remote.
 user-invocable: true
 model: haiku
-allowed-tools: ["Bash(git-agent:*)", "Bash(git:*)"]
+allowed-tools: ["Bash(git:*)"]
 ---
 
-Do NOT run `git status`, `git diff`, `git log`, or any other commands before `git-agent commit`.
+Use standard `git` commands only.
 
-1. Derive a one-sentence intent from the conversation
-2. If `$ARGUMENTS` contains a Claude model name, use it as co-author: `git-agent commit --intent "<intent>" --co-author "<model> <noreply@anthropic.com>"`
-3. Otherwise: `git-agent commit --intent "<intent>"`
-4. On auth error (401), retry with `--free`
-5. Fallback (binary unavailable): manual `git commit` with Conventional Commits format via HEREDOC
-6. `git push` (add `-u origin <branch>` if upstream not set)
-
-CLI reference: `${CLAUDE_PLUGIN_ROOT}/references/cli.md`
+1. Inspect the worktree with `git status --short`
+2. Review changes with `git diff` and `git diff --cached`
+3. Stage intended changes with `git add` or `git add -A`, unless the user explicitly requested a staged-only commit
+4. Create a Conventional Commits message from the actual changes
+5. Commit with `git commit -m "<type>(<scope>): <summary>"` or a multi-line message when useful
+6. Push with `git push`; if no upstream is configured, use `git push -u origin <branch>`
+7. Verify the result with `git status --short`

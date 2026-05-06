@@ -1,6 +1,9 @@
-# env file
-.env
+# project files
 .cache/
+.agents/
+
+# env files
+.env
 
 # Editor/IDE
 .idea/

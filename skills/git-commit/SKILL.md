@@ -1,17 +1,16 @@
 ---
 name: commit
-description: Creates a conventional git commit using git-agent. This skill should be used when the user requests "commit", "git commit", "create commit", or wants to commit staged and unstaged changes following the conventional commits format. When invoking, pass the calling Claude model name as argument (e.g., "Claude Opus 4.6").
+description: Creates a conventional git commit using standard git commands. This skill should be used when the user requests "commit", "git commit", "create commit", or wants to commit staged and unstaged changes following the conventional commits format.
 user-invocable: true
 model: haiku
-allowed-tools: ["Bash(git-agent:*)", "Bash(git:*)"]
+allowed-tools: ["Bash(git:*)"]
 ---
 
-Do NOT run `git status`, `git diff`, `git log`, or any other commands before `git-agent commit`.
+Use standard `git` commands only.
 
-1. Derive a one-sentence intent from the conversation
-2. If `$ARGUMENTS` contains a Claude model name, use it as co-author: `git-agent commit --intent "<intent>" --co-author "<model> <noreply@anthropic.com>"`
-3. Otherwise: `git-agent commit --intent "<intent>"`
-4. On auth error (401), retry with `--free`
-5. Fallback (binary unavailable): manual `git commit` with Conventional Commits format via HEREDOC
-
-CLI reference: `${CLAUDE_PLUGIN_ROOT}/references/cli.md`
+1. Inspect the worktree with `git status --short`
+2. Review changes with `git diff` and `git diff --cached`
+3. Stage intended changes with `git add` or `git add -A`, unless the user explicitly requested a staged-only commit
+4. Create a Conventional Commits message from the actual changes
+5. Commit with `git commit -m "<type>(<scope>): <summary>"` or a multi-line message when useful
+6. Verify the result with `git status --short`
