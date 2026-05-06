@@ -1,5 +1,5 @@
 ---
-name: create-pr
+name: github-create-pr
 allowed-tools: Task, Bash(gh:*), Bash(git:*)
 description: Creates comprehensive GitHub pull requests with automated quality validation and security scanning. This skill should be used when the user asks to "create a PR", "submit a pull request", or needs to merge completed work with full compliance checks.
 argument-hint: [optional description or issue reference]

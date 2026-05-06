@@ -1,5 +1,5 @@
 ---
-name: commit-and-push
+name: git-commit-and-push
 description: Creates conventional git commits using standard git commands and pushes to the remote repository. This skill should be used when the user asks to "commit and push", "push my changes", or wants to commit and immediately push to remote.
 user-invocable: true
 model: haiku

@@ -1,5 +1,5 @@
 ---
-name: commit
+name: git-commit
 description: Creates a conventional git commit using standard git commands. This skill should be used when the user requests "commit", "git commit", "create commit", or wants to commit staged and unstaged changes following the conventional commits format.
 user-invocable: true
 model: haiku
