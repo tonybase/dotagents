@@ -1,7 +1,7 @@
 ---
 name: github-resolve-pr
 allowed-tools: Task, Bash(gh:*), Bash(git:*)
-description: Resolve GitHub pull request review feedback using GitHub CLI. Use when Codex needs to inspect the current branch PR, fetch PR comments and review comments, fix reviewer-requested changes, validate the fixes, and mark GitHub review threads resolved with gh.
+description: Resolve GitHub pull request review feedback using GitHub CLI. Use when an agent needs to inspect the current branch PR, fetch PR comments and review comments, fix reviewer-requested changes, validate the fixes, and mark GitHub review threads resolved with gh.
 argument-hint: [optional PR number, URL, branch, or review focus]
 user-invocable: true
 ---
