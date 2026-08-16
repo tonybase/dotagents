@@ -92,7 +92,7 @@ body:
 ## Template Compliance
 
 When project has issue templates:
-1. List: `gh issue create --list`
+1. List the files under `.github/ISSUE_TEMPLATE/`
 2. Select appropriate template
 3. Fill all required fields
 4. Maintain template structure

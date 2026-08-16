@@ -19,7 +19,7 @@ structure.
 
 Recommended flow:
 
-1. List available templates with `gh issue create --list` when supported.
+1. List the files under `.github/ISSUE_TEMPLATE/` to see available templates.
 2. Read the matching template file under `.github/ISSUE_TEMPLATE/`.
 3. Preserve the template's required headings, prompts, and checklist items.
 4. Fill unknown or irrelevant fields with `N/A` only when the template allows

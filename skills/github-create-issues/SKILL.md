@@ -30,7 +30,7 @@ Follow TDD principles, conventional commits, and protected branch workflows. Use
 2. Review open issues to identify duplicates or related work
 3. Check for contributing guidelines (`CONTRIBUTING.md`) and follow its requirements
 4. Detect issue templates in `.github/ISSUE_TEMPLATE/` directory
-5. If templates exist: select appropriate template using `gh issue create --list`
+5. If templates exist: select the appropriate template file
 6. Determine issue type (epic, PR-scoped, or review) based on `$ARGUMENTS` complexity
 7. Apply branch-based decision logic from `references/decision-logic.md`
 
